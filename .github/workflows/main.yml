@@ -1,17 +1,17 @@
-name: CI - Debian RDP
+name: CI - Kali Linux RDP
 
 on: [push, workflow_dispatch]
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Menggunakan runner berbasis Ubuntu untuk mengemulasi Debian
+    runs-on: ubuntu-latest  # Gunakan runner Ubuntu karena GitHub tidak mendukung Kali secara langsung
 
     steps:
-    - name: Update and Install XRDP
+    - name: Update System and Install XRDP
       run: |
-        echo "deb http://deb.debian.org/debian bullseye main contrib non-free" | sudo tee -a /etc/apt/sources.list
+        echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" | sudo tee -a /etc/apt/sources.list
         sudo apt-get update
-        sudo apt-get install -y xfce4 xfce4-goodies xrdp
+        sudo apt-get install -y kali-desktop-xfce xrdp
         sudo systemctl enable xrdp
         sudo systemctl start xrdp
     - name: Setup User for XRDP
