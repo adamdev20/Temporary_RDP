@@ -4,5 +4,4 @@ Just follow the steps in the video, I'm only providing the file.
 <br>
 Don't overuse it, your GitHub account could get banned.
 <br>
-Need help? Hit up [Adam](https://wa.me/6288973651517)
 
